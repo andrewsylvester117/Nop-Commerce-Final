@@ -1,0 +1,24 @@
+﻿@model ThemeSelectorModel
+@using Microsoft.AspNetCore.Http
+@using System.Net
+@using Nop.Core
+@inject IWebHelper webHelper
+@inject IHttpContextAccessor httpContextAccessor
+@if (Model.AvaliableThemes.Count > 1)
+{
+    <div class="theme-selector">
+        @{
+
+			var themes = Model.AvaliableThemes.Select(x => new SelectListItem {
+				Text = x.Name,
+				Value = x.Name,
+				Selected = x.Name == Model.CurrentTheme ? true : false
+			});
+
+            <select id="customerTheme" name="customerTheme" 
+					asp-items="@themes"
+					onchange="setLocation(this.value);"
+					aria-label="@T("Theme.Selector.Label")"></select>
+        }
+    </div>
+}

@@ -1,0 +1,5 @@
+﻿{
+  "DataProvider": "sqlserver",
+  "DataConnectionString": "Data Source=nustudent-server.database.windows.net;Initial Catalog=nopCommerce;Integrated Security=False;Persist Security Info=False;User ID=nustudentadmin;Password=NuStudent!",
+  "RawDataSettings": {}
+}

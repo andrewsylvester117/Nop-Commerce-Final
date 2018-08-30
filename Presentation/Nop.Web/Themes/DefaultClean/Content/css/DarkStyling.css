@@ -1,0 +1,62 @@
+
+body {
+	background: #333333;
+	color: lightgray;
+}
+
+.header-upper{
+
+}
+
+.header-menu {
+	background: #fc8a00;
+	border-radius: 10px;
+}
+
+.block .list a{
+	color: lightgray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: lightgray;
+}
+
+.breadcrumb {
+	background: #fc8a00;
+	color: black;
+	border-radius: 10px;
+}
+.breadcrumb strong{
+	color: black;
+}
+
+span{
+	color: lightgray;
+}
+
+strong{
+	color: lightgray;
+}
+
+table {
+	background: #444;
+}
+p{
+	color: lightgray;
+}
+input{
+	background-color: lightgray;
+}
+input .aria-label{
+	color:black;
+}
+li{
+	border-color: black;
+}
+.news-items{
+	color: lightgray;
+}
+
+.news-title {
+	color: lightgray;
+}

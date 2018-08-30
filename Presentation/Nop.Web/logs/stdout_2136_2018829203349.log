@@ -1,0 +1,70 @@
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (745ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Enabled], [t].[LastEndUtc], [t].[LastStartUtc], [t].[LastSuccessUtc], [t].[Name], [t].[Seconds], [t].[StopOnError], [t].[Type]
+      FROM [ScheduleTask] AS [t]
+      WHERE [t].[Enabled] = 1
+      ORDER BY [t].[Seconds] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (490ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[CompanyAddress], [s].[CompanyName], [s].[CompanyPhoneNumber], [s].[CompanyVat], [s].[DefaultLanguageId], [s].[DisplayOrder], [s].[Hosts], [s].[Name], [s].[SslEnabled], [s].[Url]
+      FROM [Store] AS [s]
+      ORDER BY [s].[DisplayOrder], [s].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4,718ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[Name], [s].[StoreId], [s].[Value]
+      FROM [Setting] AS [s]
+      ORDER BY [s].[Name], [s].[StoreId]
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (944ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (278ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (615ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4,296ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+Hosting environment: Development
+Content root path: C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web
+Now listening on: http://127.0.0.1:11268
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3,415ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();

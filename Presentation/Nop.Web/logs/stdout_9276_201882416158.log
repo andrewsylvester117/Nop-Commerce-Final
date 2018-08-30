@@ -1,0 +1,1283 @@
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (272ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Enabled], [t].[LastEndUtc], [t].[LastStartUtc], [t].[LastSuccessUtc], [t].[Name], [t].[Seconds], [t].[StopOnError], [t].[Type]
+      FROM [ScheduleTask] AS [t]
+      WHERE [t].[Enabled] = 1
+      ORDER BY [t].[Seconds] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (208ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[CompanyAddress], [s].[CompanyName], [s].[CompanyPhoneNumber], [s].[CompanyVat], [s].[DefaultLanguageId], [s].[DisplayOrder], [s].[Hosts], [s].[Name], [s].[SslEnabled], [s].[Url]
+      FROM [Store] AS [s]
+      ORDER BY [s].[DisplayOrder], [s].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (220ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[Name], [s].[StoreId], [s].[Value]
+      FROM [Setting] AS [s]
+      ORDER BY [s].[Name], [s].[StoreId]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (251ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+Hosting environment: Development
+Content root path: C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web
+Now listening on: http://127.0.0.1:11912
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (230ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (213ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (211ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (205ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (207ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [l].[Id], [l].[DefaultCurrencyId], [l].[DisplayOrder], [l].[FlagImageFileName], [l].[LanguageCulture], [l].[LimitedToStores], [l].[Name], [l].[Published], [l].[Rtl], [l].[UniqueSeoCode]
+      FROM [Language] AS [l]
+      WHERE [l].[Published] = 1
+      ORDER BY [l].[DisplayOrder], [l].[Id]
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Nop.Web.Controllers.HomeController.Index (Nop.Web)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (220ms) [Parameters=[@__customerRoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [pr].[Id], [pr].[Category], [pr].[Name], [pr].[SystemName]
+      FROM [PermissionRecord] AS [pr]
+      INNER JOIN [PermissionRecord_Role_Mapping] AS [prcrm] ON [pr].[Id] = [prcrm].[PermissionRecord_Id]
+      WHERE [prcrm].[CustomerRole_Id] = @__customerRoleId_0
+      ORDER BY [pr].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (234ms) [Parameters=[@p23='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Active] = @p0, [AdminComment] = @p1, [AffiliateId] = @p2, [BillingAddress_Id] = @p3, [CannotLoginUntilDateUtc] = @p4, [CreatedOnUtc] = @p5, [CustomerGuid] = @p6, [Deleted] = @p7, [Email] = @p8, [EmailToRevalidate] = @p9, [FailedLoginAttempts] = @p10, [HasShoppingCartItems] = @p11, [IsSystemAccount] = @p12, [IsTaxExempt] = @p13, [LastActivityDateUtc] = @p14, [LastIpAddress] = @p15, [LastLoginDateUtc] = @p16, [RegisteredInStoreId] = @p17, [RequireReLogin] = @p18, [ShippingAddress_Id] = @p19, [SystemName] = @p20, [Username] = @p21, [VendorId] = @p22
+      WHERE [Id] = @p23;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.HomeController.Index (Nop.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.HomeController.Index (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 8.7794ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (260ms) [Parameters=[@__systemName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[AccessibleWhenStoreClosed], [t].[Body], [t].[DisplayOrder], [t].[IncludeInFooterColumn1], [t].[IncludeInFooterColumn2], [t].[IncludeInFooterColumn3], [t].[IncludeInSitemap], [t].[IncludeInTopMenu], [t].[IsPasswordProtected], [t].[LimitedToStores], [t].[MetaDescription], [t].[MetaKeywords], [t].[MetaTitle], [t].[Password], [t].[Published], [t].[SubjectToAcl], [t].[SystemName], [t].[Title], [t].[TopicTemplateId]
+      FROM [Topic] AS [t]
+      WHERE ([t].[SystemName] = @__systemName_0) AND ([t].[Published] = 1)
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (224ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [lp].[Id], [lp].[EntityId], [lp].[LanguageId], [lp].[LocaleKey], [lp].[LocaleKeyGroup], [lp].[LocaleValue]
+      FROM [LocalizedProperty] AS [lp]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (231ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (230ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (223ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[Id], [c].[AllowCustomersToSelectPageSize], [c].[CategoryTemplateId], [c].[CreatedOnUtc], [c].[Deleted], [c].[Description], [c].[DisplayOrder], [c].[IncludeInTopMenu], [c].[LimitedToStores], [c].[MetaDescription], [c].[MetaKeywords], [c].[MetaTitle], [c].[Name], [c].[PageSize], [c].[PageSizeOptions], [c].[ParentCategoryId], [c].[PictureId], [c].[PriceRanges], [c].[Published], [c].[ShowOnHomePage], [c].[SubjectToAcl], [c].[UpdatedOnUtc]
+      FROM [Category] AS [c]
+      WHERE (([c].[Published] = 1) AND ([c].[Deleted] = 0)) AND ([c].[ShowOnHomePage] = 1)
+      ORDER BY [c].[DisplayOrder], [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (222ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[AdditionalShippingCharge], [p].[AdminComment], [p].[AllowAddingOnlyExistingAttributeCombinations], [p].[AllowBackInStockSubscriptions], [p].[AllowCustomerReviews], [p].[AllowedQuantities], [p].[ApprovedRatingSum], [p].[ApprovedTotalReviews], [p].[AutomaticallyAddRequiredProducts], [p].[AvailableEndDateTimeUtc], [p].[AvailableForPreOrder], [p].[AvailableStartDateTimeUtc], [p].[BackorderModeId], [p].[BasepriceAmount], [p].[BasepriceBaseAmount], [p].[BasepriceBaseUnitId], [p].[BasepriceEnabled], [p].[BasepriceUnitId], [p].[CallForPrice], [p].[CreatedOnUtc], [p].[CustomerEntersPrice], [p].[Deleted], [p].[DeliveryDateId], [p].[DisableBuyButton], [p].[DisableWishlistButton], [p].[DisplayOrder], [p].[DisplayStockAvailability], [p].[DisplayStockQuantity], [p].[DownloadActivationTypeId], [p].[DownloadExpirationDays], [p].[DownloadId], [p].[FullDescription], [p].[GiftCardTypeId], [p].[Gtin], [p].[HasDiscountsApplied], [p].[HasSampleDownload], [p].[HasTierPrices], [p].[HasUserAgreement], [p].[Height], [p].[IsDownload], [p].[IsFreeShipping], [p].[IsGiftCard], [p].[IsRecurring], [p].[IsRental], [p].[IsShipEnabled], [p].[IsTaxExempt], [p].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [p].[Length], [p].[LimitedToStores], [p].[LowStockActivityId], [p].[ManageInventoryMethodId], [p].[ManufacturerPartNumber], [p].[MarkAsNew], [p].[MarkAsNewEndDateTimeUtc], [p].[MarkAsNewStartDateTimeUtc], [p].[MaxNumberOfDownloads], [p].[MaximumCustomerEnteredPrice], [p].[MetaDescription], [p].[MetaKeywords], [p].[MetaTitle], [p].[MinStockQuantity], [p].[MinimumCustomerEnteredPrice], [p].[Name], [p].[NotApprovedRatingSum], [p].[NotApprovedTotalReviews], [p].[NotReturnable], [p].[NotifyAdminForQuantityBelow], [p].[OldPrice], [p].[OrderMaximumQuantity], [p].[OrderMinimumQuantity], [p].[OverriddenGiftCardAmount], [p].[ParentGroupedProductId], [p].[PreOrderAvailabilityStartDateTimeUtc], [p].[Price], [p].[ProductAvailabilityRangeId], [p].[ProductCost], [p].[ProductTemplateId], [p].[ProductTypeId], [p].[Published], [p].[RecurringCycleLength], [p].[RecurringCyclePeriodId], [p].[RecurringTotalCycles], [p].[RentalPriceLength], [p].[RentalPricePeriodId], [p].[RequireOtherProducts], [p].[RequiredProductIds], [p].[SampleDownloadId], [p].[ShipSeparately], [p].[ShortDescription], [p].[ShowOnHomePage], [p].[Sku], [p].[StockQuantity], [p].[SubjectToAcl], [p].[TaxCategoryId], [p].[UnlimitedDownloads], [p].[UpdatedOnUtc], [p].[UseMultipleWarehouses], [p].[UserAgreementText], [p].[VendorId], [p].[VisibleIndividually], [p].[WarehouseId], [p].[Weight], [p].[Width]
+      FROM [Product] AS [p]
+      WHERE (([p].[Published] = 1) AND ([p].[Deleted] = 0)) AND ([p].[ShowOnHomePage] = 1)
+      ORDER BY [p].[DisplayOrder], [p].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (248ms) [Parameters=[@__languageId_0='?' (DbType = Int32), @__utcNow_1='?' (DbType = DateTime2), @__utcNow_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [News] AS [n]
+      WHERE (((@__languageId_0 = [n].[LanguageId]) AND ([n].[Published] = 1)) AND ([n].[StartDateUtc] IS NULL OR ([n].[StartDateUtc] <= @__utcNow_1))) AND ([n].[EndDateUtc] IS NULL OR ([n].[EndDateUtc] >= @__utcNow_2))
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (221ms) [Parameters=[@__languageId_0='?' (DbType = Int32), @__utcNow_1='?' (DbType = DateTime2), @__utcNow_2='?' (DbType = DateTime2), @__p_3='?' (DbType = Int32), @__p_4='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [n].[Id], [n].[AllowComments], [n].[CreatedOnUtc], [n].[EndDateUtc], [n].[Full], [n].[LanguageId], [n].[LimitedToStores], [n].[MetaDescription], [n].[MetaKeywords], [n].[MetaTitle], [n].[Published], [n].[Short], [n].[StartDateUtc], [n].[Title]
+      FROM [News] AS [n]
+      WHERE (((@__languageId_0 = [n].[LanguageId]) AND ([n].[Published] = 1)) AND ([n].[StartDateUtc] IS NULL OR ([n].[StartDateUtc] <= @__utcNow_1))) AND ([n].[EndDateUtc] IS NULL OR ([n].[EndDateUtc] >= @__utcNow_2))
+      ORDER BY COALESCE([n].[StartDateUtc], [n].[CreatedOnUtc]) DESC
+      OFFSET @__p_3 ROWS FETCH NEXT @__p_4 ROWS ONLY
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (224ms) [Parameters=[@__utcNow_0='?' (DbType = DateTime2), @__utcNow_1='?' (DbType = DateTime2), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [Poll] AS [poll]
+      WHERE (((([poll].[Published] = 1) AND ([poll].[StartDateUtc] IS NULL OR ([poll].[StartDateUtc] <= @__utcNow_0))) AND ([poll].[EndDateUtc] IS NULL OR ([poll].[EndDateUtc] >= @__utcNow_1))) AND ([poll].[ShowOnHomePage] = 1)) AND ([poll].[LanguageId] = @__languageId_2)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (223ms) [Parameters=[@__utcNow_0='?' (DbType = DateTime2), @__utcNow_1='?' (DbType = DateTime2), @__languageId_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32), @__p_4='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [poll].[Id], [poll].[AllowGuestsToVote], [poll].[DisplayOrder], [poll].[EndDateUtc], [poll].[LanguageId], [poll].[LimitedToStores], [poll].[Name], [poll].[Published], [poll].[ShowOnHomePage], [poll].[StartDateUtc], [poll].[SystemKeyword]
+      FROM [Poll] AS [poll]
+      WHERE (((([poll].[Published] = 1) AND ([poll].[StartDateUtc] IS NULL OR ([poll].[StartDateUtc] <= @__utcNow_0))) AND ([poll].[EndDateUtc] IS NULL OR ([poll].[EndDateUtc] >= @__utcNow_1))) AND ([poll].[ShowOnHomePage] = 1)) AND ([poll].[LanguageId] = @__languageId_2)
+      ORDER BY [poll].[DisplayOrder], [poll].[Id]
+      OFFSET @__p_3 ROWS FETCH NEXT @__p_4 ROWS ONLY
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (271ms) [Parameters=[@__languageId_0='?' (DbType = Int32), @__AdminLocaleStringResourcesPrefix_1='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+      SELECT [l].[Id], [l].[LanguageId], [l].[ResourceName], [l].[ResourceValue]
+      FROM [LocaleStringResource] AS [l]
+      WHERE ([l].[LanguageId] = @__languageId_0) AND ((NOT ([l].[ResourceName] LIKE @__AdminLocaleStringResourcesPrefix_1 + N'%') OR (LEFT([l].[ResourceName], LEN(@__AdminLocaleStringResourcesPrefix_1)) <> @__AdminLocaleStringResourcesPrefix_1)) AND (@__AdminLocaleStringResourcesPrefix_1 <> N''))
+      ORDER BY [l].[ResourceName]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (243ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[Id], [c].[CreatedOnUtc], [c].[CurrencyCode], [c].[CustomFormatting], [c].[DisplayLocale], [c].[DisplayOrder], [c].[LimitedToStores], [c].[Name], [c].[Published], [c].[Rate], [c].[RoundingTypeId], [c].[UpdatedOnUtc]
+      FROM [Currency] AS [c]
+      WHERE [c].[Published] = 1
+      ORDER BY [c].[DisplayOrder], [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (234ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (248ms) [Parameters=[ShowHidden='?' (DbType = Boolean), Name='?', StoreId='?' (DbType = Int32), CustomerRoleIds='?', PageIndex='?' (DbType = Int32), PageSize='?' (DbType = Int32), TotalRecords='?' (Direction = Output) (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      CategoryLoadAllPaged @ShowHidden, @Name, @StoreId, @CustomerRoleIds, @PageIndex, @PageSize, @TotalRecords output
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (228ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[AccessibleWhenStoreClosed], [t].[Body], [t].[DisplayOrder], [t].[IncludeInFooterColumn1], [t].[IncludeInFooterColumn2], [t].[IncludeInFooterColumn3], [t].[IncludeInSitemap], [t].[IncludeInTopMenu], [t].[IsPasswordProtected], [t].[LimitedToStores], [t].[MetaDescription], [t].[MetaKeywords], [t].[MetaTitle], [t].[Password], [t].[Published], [t].[SubjectToAcl], [t].[SystemName], [t].[Title], [t].[TopicTemplateId]
+      FROM [Topic] AS [t]
+      WHERE [t].[Published] = 1
+      ORDER BY [t].[DisplayOrder], [t].[SystemName]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (225ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (225ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (227ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (245ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (222ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (235ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (221ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (249ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (226ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (229ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 19891.3677ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.HomeController.Index (Nop.Web) in 21338.1299ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 24447.7843ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/login  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (203ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (209ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (213ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (214ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Login", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.Login (Nop.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.Login (Nop.Web) with arguments () - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.Login (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.1617ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (223ms) [Parameters=[@__systemName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[AccessibleWhenStoreClosed], [t].[Body], [t].[DisplayOrder], [t].[IncludeInFooterColumn1], [t].[IncludeInFooterColumn2], [t].[IncludeInFooterColumn3], [t].[IncludeInSitemap], [t].[IncludeInTopMenu], [t].[IsPasswordProtected], [t].[LimitedToStores], [t].[MetaDescription], [t].[MetaKeywords], [t].[MetaTitle], [t].[Password], [t].[Published], [t].[SubjectToAcl], [t].[SystemName], [t].[Title], [t].[TopicTemplateId]
+      FROM [Topic] AS [t]
+      WHERE ([t].[SystemName] = @__systemName_0) AND ([t].[Published] = 1)
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (225ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (220ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (235ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 2129.7175ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.Login (Nop.Web) in 2247.6274ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3293.4386ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 POST http://localhost:15536/login application/x-www-form-urlencoded 255
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (211ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (214ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (209ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (220ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Login", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.Login (Nop.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.Login (Nop.Web) with arguments (Nop.Web.Models.Customer.LoginModel, , False) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (224ms) [Parameters=[@__email_0='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[Email] = @__email_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (228ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (220ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (218ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (227ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (223ms) [Parameters=[@__p_1='?' (DbType = Int32), @__customerId_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(@__p_1) [password].[Id], [password].[CreatedOnUtc], [password].[CustomerId], [password].[Password], [password].[PasswordFormatId], [password].[PasswordSalt]
+      FROM [CustomerPassword] AS [password]
+      WHERE [password].[CustomerId] = @__customerId_Value_0
+      ORDER BY [password].[CreatedOnUtc] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (221ms) [Parameters=[@p23='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Active] = @p0, [AdminComment] = @p1, [AffiliateId] = @p2, [BillingAddress_Id] = @p3, [CannotLoginUntilDateUtc] = @p4, [CreatedOnUtc] = @p5, [CustomerGuid] = @p6, [Deleted] = @p7, [Email] = @p8, [EmailToRevalidate] = @p9, [FailedLoginAttempts] = @p10, [HasShoppingCartItems] = @p11, [IsSystemAccount] = @p12, [IsTaxExempt] = @p13, [LastActivityDateUtc] = @p14, [LastIpAddress] = @p15, [LastLoginDateUtc] = @p16, [RegisteredInStoreId] = @p17, [RequireReLogin] = @p18, [ShippingAddress_Id] = @p19, [SystemName] = @p20, [Username] = @p21, [VendorId] = @p22
+      WHERE [Id] = @p23;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.Login (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2027.6665ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (244ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 660.7428ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.Login (Nop.Web) in 2963.4536ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3963.493ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 POST http://localhost:15536/login application/x-www-form-urlencoded 258
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (206ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (216ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (211ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (205ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Login", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.Login (Nop.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.Login (Nop.Web) with arguments (Nop.Web.Models.Customer.LoginModel, , False) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (218ms) [Parameters=[@__email_0='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[Email] = @__email_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (223ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (232ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (232ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (224ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (216ms) [Parameters=[@__p_1='?' (DbType = Int32), @__customerId_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(@__p_1) [password].[Id], [password].[CreatedOnUtc], [password].[CustomerId], [password].[Password], [password].[PasswordFormatId], [password].[PasswordSalt]
+      FROM [CustomerPassword] AS [password]
+      WHERE [password].[CustomerId] = @__customerId_Value_0
+      ORDER BY [password].[CreatedOnUtc] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (226ms) [Parameters=[@p23='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Active] = @p0, [AdminComment] = @p1, [AffiliateId] = @p2, [BillingAddress_Id] = @p3, [CannotLoginUntilDateUtc] = @p4, [CreatedOnUtc] = @p5, [CustomerGuid] = @p6, [Deleted] = @p7, [Email] = @p8, [EmailToRevalidate] = @p9, [FailedLoginAttempts] = @p10, [HasShoppingCartItems] = @p11, [IsSystemAccount] = @p12, [IsTaxExempt] = @p13, [LastActivityDateUtc] = @p14, [LastIpAddress] = @p15, [LastLoginDateUtc] = @p16, [RegisteredInStoreId] = @p17, [RequireReLogin] = @p18, [ShippingAddress_Id] = @p19, [SystemName] = @p20, [Username] = @p21, [VendorId] = @p22
+      WHERE [Id] = @p23;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.Login (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1997.0198ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (230ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 627.2432ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.Login (Nop.Web) in 2670.252ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3612.1407ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/register  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (210ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (211ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (208ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (229ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Register", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.Register (Nop.Web)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (222ms) [Parameters=[@p23='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Active] = @p0, [AdminComment] = @p1, [AffiliateId] = @p2, [BillingAddress_Id] = @p3, [CannotLoginUntilDateUtc] = @p4, [CreatedOnUtc] = @p5, [CustomerGuid] = @p6, [Deleted] = @p7, [Email] = @p8, [EmailToRevalidate] = @p9, [FailedLoginAttempts] = @p10, [HasShoppingCartItems] = @p11, [IsSystemAccount] = @p12, [IsTaxExempt] = @p13, [LastActivityDateUtc] = @p14, [LastIpAddress] = @p15, [LastLoginDateUtc] = @p16, [RegisteredInStoreId] = @p17, [RequireReLogin] = @p18, [ShippingAddress_Id] = @p19, [SystemName] = @p20, [Username] = @p21, [VendorId] = @p22
+      WHERE [Id] = @p23;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.Register (Nop.Web) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (235ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [ca].[Id], [ca].[AttributeControlTypeId], [ca].[DisplayOrder], [ca].[IsRequired], [ca].[Name]
+      FROM [CustomerAttribute] AS [ca]
+      ORDER BY [ca].[DisplayOrder], [ca].[Id]
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.Register (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 330.3763ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Register.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (226ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Register executed in 1359.5606ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.Register (Nop.Web) in 2352.5684ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3353.0341ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 POST http://localhost:15536/register application/x-www-form-urlencoded 440
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (203ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (213ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (219ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (208ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Register", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.Register (Nop.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.Register (Nop.Web) with arguments (Nop.Web.Models.Customer.RegisterModel, , False) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (288ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [ca].[Id], [ca].[AttributeControlTypeId], [ca].[DisplayOrder], [ca].[IsRequired], [ca].[Name]
+      FROM [CustomerAttribute] AS [ca]
+      ORDER BY [ca].[DisplayOrder], [ca].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (225ms) [Parameters=[@__email_0='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[Email] = @__email_0
+      ORDER BY [c].[Id]
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.Register (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 552.8752ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Register.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (233ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [RegisteredInStoreId] = @p0
+      WHERE [Id] = @p1;
+      SELECT @@ROWCOUNT;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (223ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Register executed in 869.0943ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.Register (Nop.Web) in 1533.1366ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2561.2835ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 POST http://localhost:15536/register application/x-www-form-urlencoded 442
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (216ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (214ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (215ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (213ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Register", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.Register (Nop.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.Register (Nop.Web) with arguments (Nop.Web.Models.Customer.RegisterModel, , False) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (218ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [ca].[Id], [ca].[AttributeControlTypeId], [ca].[DisplayOrder], [ca].[IsRequired], [ca].[Name]
+      FROM [CustomerAttribute] AS [ca]
+      ORDER BY [ca].[DisplayOrder], [ca].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (233ms) [Parameters=[@__email_0='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[Email] = @__email_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (220ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 1000), @p1='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Email] = @p0, [Username] = @p1
+      WHERE [Id] = @p2;
+      SELECT @@ROWCOUNT;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (226ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [CustomerPassword] ([CreatedOnUtc], [CustomerId], [Password], [PasswordFormatId], [PasswordSalt])
+      VALUES (@p0, @p1, @p2, @p3, @p4);
+      SELECT [Id]
+      FROM [CustomerPassword]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (221ms) [Parameters=[@__systemName_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [cr].[Id], [cr].[Active], [cr].[DefaultTaxDisplayTypeId], [cr].[EnablePasswordLifetime], [cr].[FreeShipping], [cr].[IsSystemRole], [cr].[Name], [cr].[OverrideTaxDisplayType], [cr].[PurchasedWithProductId], [cr].[SystemName], [cr].[TaxExempt]
+      FROM [CustomerRole] AS [cr]
+      WHERE [cr].[SystemName] = @__systemName_0
+      ORDER BY [cr].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (222ms) [Parameters=[@p23='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Active] = @p0, [AdminComment] = @p1, [AffiliateId] = @p2, [BillingAddress_Id] = @p3, [CannotLoginUntilDateUtc] = @p4, [CreatedOnUtc] = @p5, [CustomerGuid] = @p6, [Deleted] = @p7, [Email] = @p8, [EmailToRevalidate] = @p9, [FailedLoginAttempts] = @p10, [HasShoppingCartItems] = @p11, [IsSystemAccount] = @p12, [IsTaxExempt] = @p13, [LastActivityDateUtc] = @p14, [LastIpAddress] = @p15, [LastLoginDateUtc] = @p16, [RegisteredInStoreId] = @p17, [RequireReLogin] = @p18, [ShippingAddress_Id] = @p19, [SystemName] = @p20, [Username] = @p21, [VendorId] = @p22
+      WHERE [Id] = @p23;
+      SELECT @@ROWCOUNT;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (246ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      DELETE FROM [Customer_CustomerRole_Mapping]
+      WHERE [Customer_Id] = @p0 AND [CustomerRole_Id] = @p1;
+      SELECT @@ROWCOUNT;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (237ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Customer_CustomerRole_Mapping] ([Customer_Id], [CustomerRole_Id])
+      VALUES (@p0, @p1);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (238ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 400), @p2='?' (Size = 400), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [GenericAttribute] ([EntityId], [Key], [KeyGroup], [StoreId], [Value])
+      VALUES (@p0, @p1, @p2, @p3, @p4);
+      SELECT [Id]
+      FROM [GenericAttribute]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (248ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (238ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 400), @p2='?' (Size = 400), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [GenericAttribute] ([EntityId], [Key], [KeyGroup], [StoreId], [Value])
+      VALUES (@p0, @p1, @p2, @p3, @p4);
+      SELECT [Id]
+      FROM [GenericAttribute]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (221ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (216ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 400), @p2='?' (Size = 400), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [GenericAttribute] ([EntityId], [Key], [KeyGroup], [StoreId], [Value])
+      VALUES (@p0, @p1, @p2, @p3, @p4);
+      SELECT [Id]
+      FROM [GenericAttribute]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (244ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (243ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 400), @p2='?' (Size = 400), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [GenericAttribute] ([EntityId], [Key], [KeyGroup], [StoreId], [Value])
+      VALUES (@p0, @p1, @p2, @p3, @p4);
+      SELECT [Id]
+      FROM [GenericAttribute]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (245ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (236ms) [Parameters=[@__email_0='?' (Size = 255), @__storeId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [nls].[Id], [nls].[Active], [nls].[CreatedOnUtc], [nls].[Email], [nls].[NewsLetterSubscriptionGuid], [nls].[StoreId]
+      FROM [NewsLetterSubscription] AS [nls]
+      WHERE ([nls].[Email] = @__email_0) AND ([nls].[StoreId] = @__storeId_1)
+      ORDER BY [nls].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (254ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2), @p2='?' (Size = 255), @p3='?' (DbType = Guid), @p4='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [NewsLetterSubscription] ([Active], [CreatedOnUtc], [Email], [NewsLetterSubscriptionGuid], [StoreId])
+      VALUES (@p0, @p1, @p2, @p3, @p4);
+      SELECT [Id]
+      FROM [NewsLetterSubscription]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[10]
+      AuthenticationScheme: Authentication signed in.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (231ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[Id], [e].[DefaultCurrencyId], [e].[DisplayOrder], [e].[FlagImageFileName], [e].[LanguageCulture], [e].[LimitedToStores], [e].[Name], [e].[Published], [e].[Rtl], [e].[UniqueSeoCode]
+      FROM [Language] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (230ms) [Parameters=[@__messageTemplateName_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+      SELECT [messageTemplate].[Id], [messageTemplate].[AttachedDownloadId], [messageTemplate].[BccEmailAddresses], [messageTemplate].[Body], [messageTemplate].[DelayBeforeSend], [messageTemplate].[DelayPeriodId], [messageTemplate].[EmailAccountId], [messageTemplate].[IsActive], [messageTemplate].[LimitedToStores], [messageTemplate].[Name], [messageTemplate].[Subject]
+      FROM [MessageTemplate] AS [messageTemplate]
+      WHERE [messageTemplate].[Name] = @__messageTemplateName_0
+      ORDER BY [messageTemplate].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (224ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[Id], [e].[DisplayName], [e].[Email], [e].[EnableSsl], [e].[Host], [e].[Password], [e].[Port], [e].[UseDefaultCredentials], [e].[Username]
+      FROM [EmailAccount] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (253ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 500), @p4='?' (Size = 4000), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (Size = 500), @p10='?' (Size = 500), @p11='?' (DbType = Int32), @p12='?' (Size = 500), @p13='?' (Size = 500), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Int32), @p16='?' (Size = 1000), @p17='?' (Size = 500), @p18='?' (Size = 500)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [QueuedEmail] ([AttachedDownloadId], [AttachmentFileName], [AttachmentFilePath], [Bcc], [Body], [CC], [CreatedOnUtc], [DontSendBeforeDateUtc], [EmailAccountId], [From], [FromName], [PriorityId], [ReplyTo], [ReplyToName], [SentOnUtc], [SentTries], [Subject], [To], [ToName])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+      SELECT [Id]
+      FROM [QueuedEmail]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (223ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 500), @p4='?' (Size = 4000), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (Size = 500), @p10='?' (Size = 500), @p11='?' (DbType = Int32), @p12='?' (Size = 500), @p13='?' (Size = 500), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Int32), @p16='?' (Size = 1000), @p17='?' (Size = 500), @p18='?' (Size = 500)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [QueuedEmail] ([AttachedDownloadId], [AttachmentFileName], [AttachmentFilePath], [Bcc], [Body], [CC], [CreatedOnUtc], [DontSendBeforeDateUtc], [EmailAccountId], [From], [FromName], [PriorityId], [ReplyTo], [ReplyToName], [SentOnUtc], [SentTries], [Subject], [To], [ToName])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+      SELECT [Id]
+      FROM [QueuedEmail]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (237ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 500), @p4='?' (Size = 4000), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (Size = 500), @p10='?' (Size = 500), @p11='?' (DbType = Int32), @p12='?' (Size = 500), @p13='?' (Size = 500), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Int32), @p16='?' (Size = 1000), @p17='?' (Size = 500), @p18='?' (Size = 500)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [QueuedEmail] ([AttachedDownloadId], [AttachmentFileName], [AttachmentFilePath], [Bcc], [Body], [CC], [CreatedOnUtc], [DontSendBeforeDateUtc], [EmailAccountId], [From], [FromName], [PriorityId], [ReplyTo], [ReplyToName], [SentOnUtc], [SentTries], [Subject], [To], [ToName])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+      SELECT [Id]
+      FROM [QueuedEmail]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.Register (Nop.Web), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 10063.6484ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor[1]
+      Executing RedirectResult, redirecting to http://localhost:15536/registerresult/1.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.Register (Nop.Web) in 10119.9877ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 11243.7808ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/registerresult/1  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (215ms) [Parameters=[@__email_0='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[Email] = @__email_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (212ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (212ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (232ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "RegisterResult", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.RegisterResult (Nop.Web)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (256ms) [Parameters=[@p23='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Active] = @p0, [AdminComment] = @p1, [AffiliateId] = @p2, [BillingAddress_Id] = @p3, [CannotLoginUntilDateUtc] = @p4, [CreatedOnUtc] = @p5, [CustomerGuid] = @p6, [Deleted] = @p7, [Email] = @p8, [EmailToRevalidate] = @p9, [FailedLoginAttempts] = @p10, [HasShoppingCartItems] = @p11, [IsSystemAccount] = @p12, [IsTaxExempt] = @p13, [LastActivityDateUtc] = @p14, [LastIpAddress] = @p15, [LastLoginDateUtc] = @p16, [RegisteredInStoreId] = @p17, [RequireReLogin] = @p18, [ShippingAddress_Id] = @p19, [SystemName] = @p20, [Username] = @p21, [VendorId] = @p22
+      WHERE [Id] = @p23;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.RegisterResult (Nop.Web) with arguments (1) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.RegisterResult (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.6479ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view RegisterResult.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (233ms) [Parameters=[@__customerRoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [pr].[Id], [pr].[Category], [pr].[Name], [pr].[SystemName]
+      FROM [PermissionRecord] AS [pr]
+      INNER JOIN [PermissionRecord_Role_Mapping] AS [prcrm] ON [pr].[Id] = [prcrm].[PermissionRecord_Id]
+      WHERE [prcrm].[CustomerRole_Id] = @__customerRoleId_0
+      ORDER BY [pr].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (286ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (221ms) [Parameters=[ShowHidden='?' (DbType = Boolean), Name='?', StoreId='?' (DbType = Int32), CustomerRoleIds='?', PageIndex='?' (DbType = Int32), PageSize='?' (DbType = Int32), TotalRecords='?' (Direction = Output) (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      CategoryLoadAllPaged @ShowHidden, @Name, @StoreId, @CustomerRoleIds, @PageIndex, @PageSize, @TotalRecords output
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (225ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[AccessibleWhenStoreClosed], [t].[Body], [t].[DisplayOrder], [t].[IncludeInFooterColumn1], [t].[IncludeInFooterColumn2], [t].[IncludeInFooterColumn3], [t].[IncludeInSitemap], [t].[IncludeInTopMenu], [t].[IsPasswordProtected], [t].[LimitedToStores], [t].[MetaDescription], [t].[MetaKeywords], [t].[MetaTitle], [t].[Password], [t].[Published], [t].[SubjectToAcl], [t].[SystemName], [t].[Title], [t].[TopicTemplateId]
+      FROM [Topic] AS [t]
+      WHERE [t].[Published] = 1
+      ORDER BY [t].[DisplayOrder], [t].[SystemName]
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view RegisterResult executed in 1681.0054ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.RegisterResult (Nop.Web) in 2431.6604ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3413.2492ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/customer/info  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (206ms) [Parameters=[@__email_0='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[Email] = @__email_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (208ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (210ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (212ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Info", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.Info (Nop.Web)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (213ms) [Parameters=[@__customerRoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [pr].[Id], [pr].[Category], [pr].[Name], [pr].[SystemName]
+      FROM [PermissionRecord] AS [pr]
+      INNER JOIN [PermissionRecord_Role_Mapping] AS [prcrm] ON [pr].[Id] = [prcrm].[PermissionRecord_Id]
+      WHERE [prcrm].[CustomerRole_Id] = @__customerRoleId_0
+      ORDER BY [pr].[Id]
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.Info (Nop.Web) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (242ms) [Parameters=[@__email_0='?' (Size = 255), @__storeId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [nls].[Id], [nls].[Active], [nls].[CreatedOnUtc], [nls].[Email], [nls].[NewsLetterSubscriptionGuid], [nls].[StoreId]
+      FROM [NewsLetterSubscription] AS [nls]
+      WHERE ([nls].[Email] = @__email_0) AND ([nls].[StoreId] = @__storeId_1)
+      ORDER BY [nls].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (565ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[CustomerId], [e].[Email], [e].[ExternalDisplayIdentifier], [e].[ExternalIdentifier], [e].[OAuthAccessToken], [e].[OAuthToken], [e].[ProviderSystemName]
+      FROM [ExternalAuthenticationRecord] AS [e]
+      WHERE [e].[CustomerId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (214ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [ca].[Id], [ca].[AttributeControlTypeId], [ca].[DisplayOrder], [ca].[IsRequired], [ca].[Name]
+      FROM [CustomerAttribute] AS [ca]
+      ORDER BY [ca].[DisplayOrder], [ca].[Id]
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.Info (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1064.5652ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Info.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (234ms) [Parameters=[@__storeId_0='?' (DbType = Int32), @__customerId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [ReturnRequest] AS [rr]
+      WHERE (@__storeId_0 = [rr].[StoreId]) AND (@__customerId_1 = [rr].[CustomerId])
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (220ms) [Parameters=[@__storeId_0='?' (DbType = Int32), @__customerId_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [rr].[Id], [rr].[CreatedOnUtc], [rr].[CustomNumber], [rr].[CustomerComments], [rr].[CustomerId], [rr].[OrderItemId], [rr].[Quantity], [rr].[ReasonForReturn], [rr].[RequestedAction], [rr].[ReturnRequestStatusId], [rr].[StaffNotes], [rr].[StoreId], [rr].[UpdatedOnUtc], [rr].[UploadedFileId]
+      FROM [ReturnRequest] AS [rr]
+      WHERE (@__storeId_0 = [rr].[StoreId]) AND (@__customerId_1 = [rr].[CustomerId])
+      ORDER BY [rr].[CreatedOnUtc] DESC, [rr].[Id] DESC
+      OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (228ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Info executed in 2138.7031ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.Info (Nop.Web) in 3479.0878ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4432.6173ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/customer/info  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (207ms) [Parameters=[@__email_0='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[Email] = @__email_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (213ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (209ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (217ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Info", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.Info (Nop.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.Info (Nop.Web) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (222ms) [Parameters=[@__email_0='?' (Size = 255), @__storeId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [nls].[Id], [nls].[Active], [nls].[CreatedOnUtc], [nls].[Email], [nls].[NewsLetterSubscriptionGuid], [nls].[StoreId]
+      FROM [NewsLetterSubscription] AS [nls]
+      WHERE ([nls].[Email] = @__email_0) AND ([nls].[StoreId] = @__storeId_1)
+      ORDER BY [nls].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (221ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[CustomerId], [e].[Email], [e].[ExternalDisplayIdentifier], [e].[ExternalIdentifier], [e].[OAuthAccessToken], [e].[OAuthToken], [e].[ProviderSystemName]
+      FROM [ExternalAuthenticationRecord] AS [e]
+      WHERE [e].[CustomerId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (226ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [ca].[Id], [ca].[AttributeControlTypeId], [ca].[DisplayOrder], [ca].[IsRequired], [ca].[Name]
+      FROM [CustomerAttribute] AS [ca]
+      ORDER BY [ca].[DisplayOrder], [ca].[Id]
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.Info (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 679.3403ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Info.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (214ms) [Parameters=[@__storeId_0='?' (DbType = Int32), @__customerId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [ReturnRequest] AS [rr]
+      WHERE (@__storeId_0 = [rr].[StoreId]) AND (@__customerId_1 = [rr].[CustomerId])
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (235ms) [Parameters=[@__storeId_0='?' (DbType = Int32), @__customerId_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [rr].[Id], [rr].[CreatedOnUtc], [rr].[CustomNumber], [rr].[CustomerComments], [rr].[CustomerId], [rr].[OrderItemId], [rr].[Quantity], [rr].[ReasonForReturn], [rr].[RequestedAction], [rr].[ReturnRequestStatusId], [rr].[StaffNotes], [rr].[StoreId], [rr].[UpdatedOnUtc], [rr].[UploadedFileId]
+      FROM [ReturnRequest] AS [rr]
+      WHERE (@__storeId_0 = [rr].[StoreId]) AND (@__customerId_1 = [rr].[CustomerId])
+      ORDER BY [rr].[CreatedOnUtc] DESC, [rr].[Id] DESC
+      OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (231ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Info executed in 1105.7254ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.Info (Nop.Web) in 1824.8672ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2808.6546ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/customer/info  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (212ms) [Parameters=[@__email_0='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[Email] = @__email_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (210ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (222ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (207ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Info", controller = "Customer", area = ""}. Executing action Nop.Web.Controllers.CustomerController.Info (Nop.Web)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (225ms) [Parameters=[@p23='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Active] = @p0, [AdminComment] = @p1, [AffiliateId] = @p2, [BillingAddress_Id] = @p3, [CannotLoginUntilDateUtc] = @p4, [CreatedOnUtc] = @p5, [CustomerGuid] = @p6, [Deleted] = @p7, [Email] = @p8, [EmailToRevalidate] = @p9, [FailedLoginAttempts] = @p10, [HasShoppingCartItems] = @p11, [IsSystemAccount] = @p12, [IsTaxExempt] = @p13, [LastActivityDateUtc] = @p14, [LastIpAddress] = @p15, [LastLoginDateUtc] = @p16, [RegisteredInStoreId] = @p17, [RequireReLogin] = @p18, [ShippingAddress_Id] = @p19, [SystemName] = @p20, [Username] = @p21, [VendorId] = @p22
+      WHERE [Id] = @p23;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CustomerController.Info (Nop.Web) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (216ms) [Parameters=[@__email_0='?' (Size = 255), @__storeId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [nls].[Id], [nls].[Active], [nls].[CreatedOnUtc], [nls].[Email], [nls].[NewsLetterSubscriptionGuid], [nls].[StoreId]
+      FROM [NewsLetterSubscription] AS [nls]
+      WHERE ([nls].[Email] = @__email_0) AND ([nls].[StoreId] = @__storeId_1)
+      ORDER BY [nls].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (230ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[CustomerId], [e].[Email], [e].[ExternalDisplayIdentifier], [e].[ExternalIdentifier], [e].[OAuthAccessToken], [e].[OAuthToken], [e].[ProviderSystemName]
+      FROM [ExternalAuthenticationRecord] AS [e]
+      WHERE [e].[CustomerId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (232ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [ca].[Id], [ca].[AttributeControlTypeId], [ca].[DisplayOrder], [ca].[IsRequired], [ca].[Name]
+      FROM [CustomerAttribute] AS [ca]
+      ORDER BY [ca].[DisplayOrder], [ca].[Id]
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CustomerController.Info (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 694.7437ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Info.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (241ms) [Parameters=[@__storeId_0='?' (DbType = Int32), @__customerId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [ReturnRequest] AS [rr]
+      WHERE (@__storeId_0 = [rr].[StoreId]) AND (@__customerId_1 = [rr].[CustomerId])
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (270ms) [Parameters=[@__storeId_0='?' (DbType = Int32), @__customerId_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [rr].[Id], [rr].[CreatedOnUtc], [rr].[CustomNumber], [rr].[CustomerComments], [rr].[CustomerId], [rr].[OrderItemId], [rr].[Quantity], [rr].[ReasonForReturn], [rr].[RequestedAction], [rr].[ReturnRequestStatusId], [rr].[StaffNotes], [rr].[StoreId], [rr].[UpdatedOnUtc], [rr].[UploadedFileId]
+      FROM [ReturnRequest] AS [rr]
+      WHERE (@__storeId_0 = [rr].[StoreId]) AND (@__customerId_1 = [rr].[CustomerId])
+      ORDER BY [rr].[CreatedOnUtc] DESC, [rr].[Id] DESC
+      OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (240ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Info executed in 1197.5987ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CustomerController.Info (Nop.Web) in 2945.2637ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3995.4868ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 58.1845ms 200 image/x-icon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

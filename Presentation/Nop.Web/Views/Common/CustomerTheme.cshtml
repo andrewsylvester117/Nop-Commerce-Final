@@ -1,0 +1,38 @@
+﻿@model ThemeSelectorModel
+@{
+    Layout = "_ColumnsTwo";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Account").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-account-page");
+    Html.AppendPageCssClassParts("html-order-list-page");
+}
+@section left
+{
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.DisplaySettings })
+}
+<div class="page account-page order-list-page">
+    <div class="page-title">
+        <h1>@T("Account.MyAccount") - Theme</h1>
+    </div>
+	<div class="page-body">
+		<div class="theme-selector">
+			@{
+			//SelectListItem testItem = new SelectListItem { Selected = true, Text = "Test", Value = "Test Value" };
+
+			var themes = Model.AvaliableThemes.Select(x => new SelectListItem
+			{
+				Text = x.Name,
+				Value = x.Name,
+				Selected = x.Name == Model.CurrentTheme ? true : false
+			});
+
+			<select id="customerTheme" name="customerTheme"
+					asp-items="@themes"
+					onchange="@Model.ChangeTheme(Model.CurrentTheme)";
+					aria-label="@T("Theme.Selector.Label")"></select>
+			}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,806 @@
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (411ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Enabled], [t].[LastEndUtc], [t].[LastStartUtc], [t].[LastSuccessUtc], [t].[Name], [t].[Seconds], [t].[StopOnError], [t].[Type]
+      FROM [ScheduleTask] AS [t]
+      WHERE [t].[Enabled] = 1
+      ORDER BY [t].[Seconds] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (497ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[CompanyAddress], [s].[CompanyName], [s].[CompanyPhoneNumber], [s].[CompanyVat], [s].[DefaultLanguageId], [s].[DisplayOrder], [s].[Hosts], [s].[Name], [s].[SslEnabled], [s].[Url]
+      FROM [Store] AS [s]
+      ORDER BY [s].[DisplayOrder], [s].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (380ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[Name], [s].[StoreId], [s].[Value]
+      FROM [Setting] AS [s]
+      ORDER BY [s].[Name], [s].[StoreId]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (386ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Log] ([CreatedOnUtc], [CustomerId], [FullMessage], [IpAddress], [LogLevelId], [PageUrl], [ReferrerUrl], [ShortMessage])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT [Id]
+      FROM [Log]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+Hosting environment: Development
+Content root path: C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web
+Now listening on: http://127.0.0.1:33095
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (660ms) [Parameters=[@__systemName_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [cr].[Id], [cr].[Active], [cr].[DefaultTaxDisplayTypeId], [cr].[EnablePasswordLifetime], [cr].[FreeShipping], [cr].[IsSystemRole], [cr].[Name], [cr].[OverrideTaxDisplayType], [cr].[PurchasedWithProductId], [cr].[SystemName], [cr].[TaxExempt]
+      FROM [CustomerRole] AS [cr]
+      WHERE [cr].[SystemName] = @__systemName_0
+      ORDER BY [cr].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (260ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Customer] ([Active], [AdminComment], [AffiliateId], [BillingAddress_Id], [CannotLoginUntilDateUtc], [CreatedOnUtc], [CustomerGuid], [Deleted], [Email], [EmailToRevalidate], [FailedLoginAttempts], [HasShoppingCartItems], [IsSystemAccount], [IsTaxExempt], [LastActivityDateUtc], [LastIpAddress], [LastLoginDateUtc], [RegisteredInStoreId], [RequireReLogin], [ShippingAddress_Id], [SystemName], [Username], [VendorId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+      SELECT [Id]
+      FROM [Customer]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (254ms) [Parameters=[@p23='?' (DbType = Int32), @p24='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Customer_CustomerRole_Mapping] ([Customer_Id], [CustomerRole_Id])
+      VALUES (@p23, @p24);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (506ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (271ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [l].[Id], [l].[DefaultCurrencyId], [l].[DisplayOrder], [l].[FlagImageFileName], [l].[LanguageCulture], [l].[LimitedToStores], [l].[Name], [l].[Published], [l].[Rtl], [l].[UniqueSeoCode]
+      FROM [Language] AS [l]
+      WHERE [l].[Published] = 1
+      ORDER BY [l].[DisplayOrder], [l].[Id]
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Nop.Web.Controllers.HomeController.Index (Nop.Web)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (252ms) [Parameters=[@__customerRoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [pr].[Id], [pr].[Category], [pr].[Name], [pr].[SystemName]
+      FROM [PermissionRecord] AS [pr]
+      INNER JOIN [PermissionRecord_Role_Mapping] AS [prcrm] ON [pr].[Id] = [prcrm].[PermissionRecord_Id]
+      WHERE [prcrm].[CustomerRole_Id] = @__customerRoleId_0
+      ORDER BY [pr].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (276ms) [Parameters=[@p23='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Active] = @p0, [AdminComment] = @p1, [AffiliateId] = @p2, [BillingAddress_Id] = @p3, [CannotLoginUntilDateUtc] = @p4, [CreatedOnUtc] = @p5, [CustomerGuid] = @p6, [Deleted] = @p7, [Email] = @p8, [EmailToRevalidate] = @p9, [FailedLoginAttempts] = @p10, [HasShoppingCartItems] = @p11, [IsSystemAccount] = @p12, [IsTaxExempt] = @p13, [LastActivityDateUtc] = @p14, [LastIpAddress] = @p15, [LastLoginDateUtc] = @p16, [RegisteredInStoreId] = @p17, [RequireReLogin] = @p18, [ShippingAddress_Id] = @p19, [SystemName] = @p20, [Username] = @p21, [VendorId] = @p22
+      WHERE [Id] = @p23;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.HomeController.Index (Nop.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.HomeController.Index (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 16.3912ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (383ms) [Parameters=[@__systemName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[AccessibleWhenStoreClosed], [t].[Body], [t].[DisplayOrder], [t].[IncludeInFooterColumn1], [t].[IncludeInFooterColumn2], [t].[IncludeInFooterColumn3], [t].[IncludeInSitemap], [t].[IncludeInTopMenu], [t].[IsPasswordProtected], [t].[LimitedToStores], [t].[MetaDescription], [t].[MetaKeywords], [t].[MetaTitle], [t].[Password], [t].[Published], [t].[SubjectToAcl], [t].[SystemName], [t].[Title], [t].[TopicTemplateId]
+      FROM [Topic] AS [t]
+      WHERE ([t].[SystemName] = @__systemName_0) AND ([t].[Published] = 1)
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (327ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [lp].[Id], [lp].[EntityId], [lp].[LanguageId], [lp].[LocaleKey], [lp].[LocaleKeyGroup], [lp].[LocaleValue]
+      FROM [LocalizedProperty] AS [lp]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (334ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (275ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (528ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[Id], [c].[AllowCustomersToSelectPageSize], [c].[CategoryTemplateId], [c].[CreatedOnUtc], [c].[Deleted], [c].[Description], [c].[DisplayOrder], [c].[IncludeInTopMenu], [c].[LimitedToStores], [c].[MetaDescription], [c].[MetaKeywords], [c].[MetaTitle], [c].[Name], [c].[PageSize], [c].[PageSizeOptions], [c].[ParentCategoryId], [c].[PictureId], [c].[PriceRanges], [c].[Published], [c].[ShowOnHomePage], [c].[SubjectToAcl], [c].[UpdatedOnUtc]
+      FROM [Category] AS [c]
+      WHERE (([c].[Published] = 1) AND ([c].[Deleted] = 0)) AND ([c].[ShowOnHomePage] = 1)
+      ORDER BY [c].[DisplayOrder], [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (287ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[AdditionalShippingCharge], [p].[AdminComment], [p].[AllowAddingOnlyExistingAttributeCombinations], [p].[AllowBackInStockSubscriptions], [p].[AllowCustomerReviews], [p].[AllowedQuantities], [p].[ApprovedRatingSum], [p].[ApprovedTotalReviews], [p].[AutomaticallyAddRequiredProducts], [p].[AvailableEndDateTimeUtc], [p].[AvailableForPreOrder], [p].[AvailableStartDateTimeUtc], [p].[BackorderModeId], [p].[BasepriceAmount], [p].[BasepriceBaseAmount], [p].[BasepriceBaseUnitId], [p].[BasepriceEnabled], [p].[BasepriceUnitId], [p].[CallForPrice], [p].[CreatedOnUtc], [p].[CustomerEntersPrice], [p].[Deleted], [p].[DeliveryDateId], [p].[DisableBuyButton], [p].[DisableWishlistButton], [p].[DisplayOrder], [p].[DisplayStockAvailability], [p].[DisplayStockQuantity], [p].[DownloadActivationTypeId], [p].[DownloadExpirationDays], [p].[DownloadId], [p].[FullDescription], [p].[GiftCardTypeId], [p].[Gtin], [p].[HasDiscountsApplied], [p].[HasSampleDownload], [p].[HasTierPrices], [p].[HasUserAgreement], [p].[Height], [p].[IsDownload], [p].[IsFreeShipping], [p].[IsGiftCard], [p].[IsRecurring], [p].[IsRental], [p].[IsShipEnabled], [p].[IsTaxExempt], [p].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [p].[Length], [p].[LimitedToStores], [p].[LowStockActivityId], [p].[ManageInventoryMethodId], [p].[ManufacturerPartNumber], [p].[MarkAsNew], [p].[MarkAsNewEndDateTimeUtc], [p].[MarkAsNewStartDateTimeUtc], [p].[MaxNumberOfDownloads], [p].[MaximumCustomerEnteredPrice], [p].[MetaDescription], [p].[MetaKeywords], [p].[MetaTitle], [p].[MinStockQuantity], [p].[MinimumCustomerEnteredPrice], [p].[Name], [p].[NotApprovedRatingSum], [p].[NotApprovedTotalReviews], [p].[NotReturnable], [p].[NotifyAdminForQuantityBelow], [p].[OldPrice], [p].[OrderMaximumQuantity], [p].[OrderMinimumQuantity], [p].[OverriddenGiftCardAmount], [p].[ParentGroupedProductId], [p].[PreOrderAvailabilityStartDateTimeUtc], [p].[Price], [p].[ProductAvailabilityRangeId], [p].[ProductCost], [p].[ProductTemplateId], [p].[ProductTypeId], [p].[Published], [p].[RecurringCycleLength], [p].[RecurringCyclePeriodId], [p].[RecurringTotalCycles], [p].[RentalPriceLength], [p].[RentalPricePeriodId], [p].[RequireOtherProducts], [p].[RequiredProductIds], [p].[SampleDownloadId], [p].[ShipSeparately], [p].[ShortDescription], [p].[ShowOnHomePage], [p].[Sku], [p].[StockQuantity], [p].[SubjectToAcl], [p].[TaxCategoryId], [p].[UnlimitedDownloads], [p].[UpdatedOnUtc], [p].[UseMultipleWarehouses], [p].[UserAgreementText], [p].[VendorId], [p].[VisibleIndividually], [p].[WarehouseId], [p].[Weight], [p].[Width]
+      FROM [Product] AS [p]
+      WHERE (([p].[Published] = 1) AND ([p].[Deleted] = 0)) AND ([p].[ShowOnHomePage] = 1)
+      ORDER BY [p].[DisplayOrder], [p].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (272ms) [Parameters=[@__languageId_0='?' (DbType = Int32), @__utcNow_1='?' (DbType = DateTime2), @__utcNow_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [News] AS [n]
+      WHERE (((@__languageId_0 = [n].[LanguageId]) AND ([n].[Published] = 1)) AND ([n].[StartDateUtc] IS NULL OR ([n].[StartDateUtc] <= @__utcNow_1))) AND ([n].[EndDateUtc] IS NULL OR ([n].[EndDateUtc] >= @__utcNow_2))
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (430ms) [Parameters=[@__languageId_0='?' (DbType = Int32), @__utcNow_1='?' (DbType = DateTime2), @__utcNow_2='?' (DbType = DateTime2), @__p_3='?' (DbType = Int32), @__p_4='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [n].[Id], [n].[AllowComments], [n].[CreatedOnUtc], [n].[EndDateUtc], [n].[Full], [n].[LanguageId], [n].[LimitedToStores], [n].[MetaDescription], [n].[MetaKeywords], [n].[MetaTitle], [n].[Published], [n].[Short], [n].[StartDateUtc], [n].[Title]
+      FROM [News] AS [n]
+      WHERE (((@__languageId_0 = [n].[LanguageId]) AND ([n].[Published] = 1)) AND ([n].[StartDateUtc] IS NULL OR ([n].[StartDateUtc] <= @__utcNow_1))) AND ([n].[EndDateUtc] IS NULL OR ([n].[EndDateUtc] >= @__utcNow_2))
+      ORDER BY COALESCE([n].[StartDateUtc], [n].[CreatedOnUtc]) DESC
+      OFFSET @__p_3 ROWS FETCH NEXT @__p_4 ROWS ONLY
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (268ms) [Parameters=[@__utcNow_0='?' (DbType = DateTime2), @__utcNow_1='?' (DbType = DateTime2), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [Poll] AS [poll]
+      WHERE (((([poll].[Published] = 1) AND ([poll].[StartDateUtc] IS NULL OR ([poll].[StartDateUtc] <= @__utcNow_0))) AND ([poll].[EndDateUtc] IS NULL OR ([poll].[EndDateUtc] >= @__utcNow_1))) AND ([poll].[ShowOnHomePage] = 1)) AND ([poll].[LanguageId] = @__languageId_2)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (241ms) [Parameters=[@__utcNow_0='?' (DbType = DateTime2), @__utcNow_1='?' (DbType = DateTime2), @__languageId_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32), @__p_4='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [poll].[Id], [poll].[AllowGuestsToVote], [poll].[DisplayOrder], [poll].[EndDateUtc], [poll].[LanguageId], [poll].[LimitedToStores], [poll].[Name], [poll].[Published], [poll].[ShowOnHomePage], [poll].[StartDateUtc], [poll].[SystemKeyword]
+      FROM [Poll] AS [poll]
+      WHERE (((([poll].[Published] = 1) AND ([poll].[StartDateUtc] IS NULL OR ([poll].[StartDateUtc] <= @__utcNow_0))) AND ([poll].[EndDateUtc] IS NULL OR ([poll].[EndDateUtc] >= @__utcNow_1))) AND ([poll].[ShowOnHomePage] = 1)) AND ([poll].[LanguageId] = @__languageId_2)
+      ORDER BY [poll].[DisplayOrder], [poll].[Id]
+      OFFSET @__p_3 ROWS FETCH NEXT @__p_4 ROWS ONLY
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (494ms) [Parameters=[@__languageId_0='?' (DbType = Int32), @__AdminLocaleStringResourcesPrefix_1='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+      SELECT [l].[Id], [l].[LanguageId], [l].[ResourceName], [l].[ResourceValue]
+      FROM [LocaleStringResource] AS [l]
+      WHERE ([l].[LanguageId] = @__languageId_0) AND ((NOT ([l].[ResourceName] LIKE @__AdminLocaleStringResourcesPrefix_1 + N'%') OR (LEFT([l].[ResourceName], LEN(@__AdminLocaleStringResourcesPrefix_1)) <> @__AdminLocaleStringResourcesPrefix_1)) AND (@__AdminLocaleStringResourcesPrefix_1 <> N''))
+      ORDER BY [l].[ResourceName]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (451ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[Id], [c].[CreatedOnUtc], [c].[CurrencyCode], [c].[CustomFormatting], [c].[DisplayLocale], [c].[DisplayOrder], [c].[LimitedToStores], [c].[Name], [c].[Published], [c].[Rate], [c].[RoundingTypeId], [c].[UpdatedOnUtc]
+      FROM [Currency] AS [c]
+      WHERE [c].[Published] = 1
+      ORDER BY [c].[DisplayOrder], [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (294ms) [Parameters=[ShowHidden='?' (DbType = Boolean), Name='?', StoreId='?' (DbType = Int32), CustomerRoleIds='?', PageIndex='?' (DbType = Int32), PageSize='?' (DbType = Int32), TotalRecords='?' (Direction = Output) (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      CategoryLoadAllPaged @ShowHidden, @Name, @StoreId, @CustomerRoleIds, @PageIndex, @PageSize, @TotalRecords output
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (289ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[AccessibleWhenStoreClosed], [t].[Body], [t].[DisplayOrder], [t].[IncludeInFooterColumn1], [t].[IncludeInFooterColumn2], [t].[IncludeInFooterColumn3], [t].[IncludeInSitemap], [t].[IncludeInTopMenu], [t].[IsPasswordProtected], [t].[LimitedToStores], [t].[MetaDescription], [t].[MetaKeywords], [t].[MetaTitle], [t].[Password], [t].[Published], [t].[SubjectToAcl], [t].[SystemName], [t].[Title], [t].[TopicTemplateId]
+      FROM [Topic] AS [t]
+      WHERE [t].[Published] = 1
+      ORDER BY [t].[DisplayOrder], [t].[SystemName]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (347ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (302ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (294ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (382ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (261ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (313ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (394ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (397ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (302ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (389ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__entityName_1='?' (Size = 400), @__languageId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [ur].[Slug]
+      FROM [UrlRecord] AS [ur]
+      WHERE ((([ur].[EntityId] = @__entityId_0) AND ([ur].[EntityName] = @__entityName_1)) AND ([ur].[LanguageId] = @__languageId_2)) AND ([ur].[IsActive] = 1)
+      ORDER BY [ur].[Id] DESC
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 36816.3173ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.HomeController.Index (Nop.Web) in 38527.7553ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 51480.4289ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/lib/jquery/jquery-3.3.1.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/lib/jquery-validate/jquery.validate-v1.17.0/jquery.validate.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/Themes/DefaultClean/Content/css/styles.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/Themes/DefaultClean/Content/images/logo.png  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/lib/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/jquery-validate/jquery.validate-v1.17.0/jquery.validate.min.js'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\wwwroot\lib\jquery-validate\jquery.validate-v1.17.0\jquery.validate.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.min.css'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\wwwroot\lib\jquery-ui\jquery-ui-1.12.1.custom\jquery-ui.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/DefaultClean/Content/images/logo.png'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\Themes\DefaultClean\Content\images\logo.png'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 177.8993ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/DefaultClean/Content/css/styles.css'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\Themes\DefaultClean\Content\css\styles.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 245.6718ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 294.6373ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/lib/jquery-validate/jquery.validate.unobtrusive-v3.2.10/jquery.validate.unobtrusive.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 319.0729ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/jquery/jquery-3.3.1.min.js'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\wwwroot\lib\jquery\jquery-3.3.1.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/js/public.ajaxcart.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/lib/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/Themes/DefaultClean/Content/images/social-sprite.png  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/jquery-validate/jquery.validate.unobtrusive-v3.2.10/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\wwwroot\lib\jquery-validate\jquery.validate.unobtrusive-v3.2.10\jquery.validate.unobtrusive.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/lib/jquery-migrate/jquery-migrate-3.0.1.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/public.ajaxcart.js'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\wwwroot\js\public.ajaxcart.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 676.5637ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 255.4198ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/jquery-migrate/jquery-migrate-3.0.1.min.js'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\wwwroot\lib\jquery-migrate\jquery-migrate-3.0.1.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/Themes/DefaultClean/Content/images/ajax-loader-small.gif  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/Themes/DefaultClean/Content/images/loading.gif  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 213.3877ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.min.js'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\wwwroot\lib\jquery-ui\jquery-ui-1.12.1.custom\jquery-ui.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 306.0268ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 442.6237ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/DefaultClean/Content/images/loading.gif'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\Themes\DefaultClean\Content\images\loading.gif'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/Themes/DefaultClean/Content/images/shopping-bag.png  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 71.5037ms 200 image/gif
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/DefaultClean/Content/images/social-sprite.png'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\Themes\DefaultClean\Content\images\social-sprite.png'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/DefaultClean/Content/images/shopping-bag.png'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\Themes\DefaultClean\Content\images\shopping-bag.png'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 451.0655ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 202.9085ms 200 image/png
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/DefaultClean/Content/images/ajax-loader-small.gif'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\Themes\DefaultClean\Content\images\ajax-loader-small.gif'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 303.2053ms 200 image/gif
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (292ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (231ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (227ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (231ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Nop.Web.Controllers.HomeController.Index (Nop.Web)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (258ms) [Parameters=[@p23='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 1000), @p9='?' (Size = 1000), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Boolean), @p19='?' (DbType = Int32), @p20='?' (Size = 400), @p21='?' (Size = 1000), @p22='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Customer] SET [Active] = @p0, [AdminComment] = @p1, [AffiliateId] = @p2, [BillingAddress_Id] = @p3, [CannotLoginUntilDateUtc] = @p4, [CreatedOnUtc] = @p5, [CustomerGuid] = @p6, [Deleted] = @p7, [Email] = @p8, [EmailToRevalidate] = @p9, [FailedLoginAttempts] = @p10, [HasShoppingCartItems] = @p11, [IsSystemAccount] = @p12, [IsTaxExempt] = @p13, [LastActivityDateUtc] = @p14, [LastIpAddress] = @p15, [LastLoginDateUtc] = @p16, [RegisteredInStoreId] = @p17, [RequireReLogin] = @p18, [ShippingAddress_Id] = @p19, [SystemName] = @p20, [Username] = @p21, [VendorId] = @p22
+      WHERE [Id] = @p23;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.HomeController.Index (Nop.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.HomeController.Index (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0598ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (651ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[AdditionalShippingCharge], [p].[AdminComment], [p].[AllowAddingOnlyExistingAttributeCombinations], [p].[AllowBackInStockSubscriptions], [p].[AllowCustomerReviews], [p].[AllowedQuantities], [p].[ApprovedRatingSum], [p].[ApprovedTotalReviews], [p].[AutomaticallyAddRequiredProducts], [p].[AvailableEndDateTimeUtc], [p].[AvailableForPreOrder], [p].[AvailableStartDateTimeUtc], [p].[BackorderModeId], [p].[BasepriceAmount], [p].[BasepriceBaseAmount], [p].[BasepriceBaseUnitId], [p].[BasepriceEnabled], [p].[BasepriceUnitId], [p].[CallForPrice], [p].[CreatedOnUtc], [p].[CustomerEntersPrice], [p].[Deleted], [p].[DeliveryDateId], [p].[DisableBuyButton], [p].[DisableWishlistButton], [p].[DisplayOrder], [p].[DisplayStockAvailability], [p].[DisplayStockQuantity], [p].[DownloadActivationTypeId], [p].[DownloadExpirationDays], [p].[DownloadId], [p].[FullDescription], [p].[GiftCardTypeId], [p].[Gtin], [p].[HasDiscountsApplied], [p].[HasSampleDownload], [p].[HasTierPrices], [p].[HasUserAgreement], [p].[Height], [p].[IsDownload], [p].[IsFreeShipping], [p].[IsGiftCard], [p].[IsRecurring], [p].[IsRental], [p].[IsShipEnabled], [p].[IsTaxExempt], [p].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [p].[Length], [p].[LimitedToStores], [p].[LowStockActivityId], [p].[ManageInventoryMethodId], [p].[ManufacturerPartNumber], [p].[MarkAsNew], [p].[MarkAsNewEndDateTimeUtc], [p].[MarkAsNewStartDateTimeUtc], [p].[MaxNumberOfDownloads], [p].[MaximumCustomerEnteredPrice], [p].[MetaDescription], [p].[MetaKeywords], [p].[MetaTitle], [p].[MinStockQuantity], [p].[MinimumCustomerEnteredPrice], [p].[Name], [p].[NotApprovedRatingSum], [p].[NotApprovedTotalReviews], [p].[NotReturnable], [p].[NotifyAdminForQuantityBelow], [p].[OldPrice], [p].[OrderMaximumQuantity], [p].[OrderMinimumQuantity], [p].[OverriddenGiftCardAmount], [p].[ParentGroupedProductId], [p].[PreOrderAvailabilityStartDateTimeUtc], [p].[Price], [p].[ProductAvailabilityRangeId], [p].[ProductCost], [p].[ProductTemplateId], [p].[ProductTypeId], [p].[Published], [p].[RecurringCycleLength], [p].[RecurringCyclePeriodId], [p].[RecurringTotalCycles], [p].[RentalPriceLength], [p].[RentalPricePeriodId], [p].[RequireOtherProducts], [p].[RequiredProductIds], [p].[SampleDownloadId], [p].[ShipSeparately], [p].[ShortDescription], [p].[ShowOnHomePage], [p].[Sku], [p].[StockQuantity], [p].[SubjectToAcl], [p].[TaxCategoryId], [p].[UnlimitedDownloads], [p].[UpdatedOnUtc], [p].[UseMultipleWarehouses], [p].[UserAgreementText], [p].[VendorId], [p].[VisibleIndividually], [p].[WarehouseId], [p].[Weight], [p].[Width]
+      FROM [Product] AS [p]
+      WHERE (([p].[Published] = 1) AND ([p].[Deleted] = 0)) AND ([p].[ShowOnHomePage] = 1)
+      ORDER BY [p].[DisplayOrder], [p].[Id]
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 711.8526ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.HomeController.Index (Nop.Web) in 1808.3248ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4364.7284ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/newproducts  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (223ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (236ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (239ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (246ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "NewProducts", controller = "Product", area = ""}. Executing action Nop.Web.Controllers.ProductController.NewProducts (Nop.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.ProductController.NewProducts (Nop.Web) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (298ms) [Parameters=[CategoryIds='?', ManufacturerId='?' (DbType = Int32), StoreId='?' (DbType = Int32), VendorId='?' (DbType = Int32), WarehouseId='?' (DbType = Int32), ProductTypeId='?' (DbType = Int32), VisibleIndividuallyOnly='?' (DbType = Boolean), MarkedAsNewOnly='?' (DbType = Boolean), ProductTagId='?' (DbType = Int32), FeaturedProducts='?' (DbType = Boolean), PriceMin='?' (DbType = Decimal), PriceMax='?' (DbType = Decimal), Keywords='?', SearchDescriptions='?' (DbType = Boolean), SearchManufacturerPartNumber='?' (DbType = Boolean), SearchSku='?' (DbType = Boolean), SearchProductTags='?' (DbType = Boolean), UseFullTextSearch='?' (DbType = Boolean), FullTextMode='?' (DbType = Int32), FilteredSpecs='?', LanguageId='?' (DbType = Int32), OrderBy='?' (DbType = Int32), AllowedCustomerRoleIds='?', PageIndex='?' (DbType = Int32), PageSize='?' (DbType = Int32), ShowHidden='?' (DbType = Boolean), OverridePublished='?' (DbType = Boolean), LoadFilterableSpecificationAttributeOptionIds='?' (DbType = Boolean), FilterableSpecificationAttributeOptionIds='?' (Size = 2147483646) (Direction = Output), TotalRecords='?' (Direction = Output) (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      ProductLoadAllPaged @CategoryIds, @ManufacturerId, @StoreId, @VendorId, @WarehouseId, @ProductTypeId, @VisibleIndividuallyOnly, @MarkedAsNewOnly, @ProductTagId, @FeaturedProducts, @PriceMin, @PriceMax, @Keywords, @SearchDescriptions, @SearchManufacturerPartNumber, @SearchSku, @SearchProductTags, @UseFullTextSearch, @FullTextMode, @FilteredSpecs, @LanguageId, @OrderBy, @AllowedCustomerRoleIds, @PageIndex, @PageSize, @ShowHidden, @OverridePublished, @LoadFilterableSpecificationAttributeOptionIds, @FilterableSpecificationAttributeOptionIds output, @TotalRecords output
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.ProductController.NewProducts (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 512.9489ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view NewProducts.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (274ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [Manufacturer] AS [m]
+      WHERE ([m].[Published] = 1) AND ([m].[Deleted] = 0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (251ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[AllowCustomersToSelectPageSize], [m].[CreatedOnUtc], [m].[Deleted], [m].[Description], [m].[DisplayOrder], [m].[LimitedToStores], [m].[ManufacturerTemplateId], [m].[MetaDescription], [m].[MetaKeywords], [m].[MetaTitle], [m].[Name], [m].[PageSize], [m].[PageSizeOptions], [m].[PictureId], [m].[PriceRanges], [m].[Published], [m].[SubjectToAcl], [m].[UpdatedOnUtc]
+      FROM [Manufacturer] AS [m]
+      WHERE ([m].[Published] = 1) AND ([m].[Deleted] = 0)
+      ORDER BY [m].[DisplayOrder], [m].[Id]
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (249ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[Name]
+      FROM [ProductTag] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (275ms) [Parameters=[@__utcNow_0='?' (DbType = DateTime2), @__utcNow_1='?' (DbType = DateTime2), @__languageId_2='?' (DbType = Int32), @__systemKeyword_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [Poll] AS [poll]
+      WHERE (((([poll].[Published] = 1) AND ([poll].[StartDateUtc] IS NULL OR ([poll].[StartDateUtc] <= @__utcNow_0))) AND ([poll].[EndDateUtc] IS NULL OR ([poll].[EndDateUtc] >= @__utcNow_1))) AND ([poll].[LanguageId] = @__languageId_2)) AND ([poll].[SystemKeyword] = @__systemKeyword_3)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (247ms) [Parameters=[@__utcNow_0='?' (DbType = DateTime2), @__utcNow_1='?' (DbType = DateTime2), @__languageId_2='?' (DbType = Int32), @__systemKeyword_3='?' (Size = 4000), @__p_4='?' (DbType = Int32), @__p_5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [poll].[Id], [poll].[AllowGuestsToVote], [poll].[DisplayOrder], [poll].[EndDateUtc], [poll].[LanguageId], [poll].[LimitedToStores], [poll].[Name], [poll].[Published], [poll].[ShowOnHomePage], [poll].[StartDateUtc], [poll].[SystemKeyword]
+      FROM [Poll] AS [poll]
+      WHERE (((([poll].[Published] = 1) AND ([poll].[StartDateUtc] IS NULL OR ([poll].[StartDateUtc] <= @__utcNow_0))) AND ([poll].[EndDateUtc] IS NULL OR ([poll].[EndDateUtc] >= @__utcNow_1))) AND ([poll].[LanguageId] = @__languageId_2)) AND ([poll].[SystemKeyword] = @__systemKeyword_3)
+      ORDER BY [poll].[DisplayOrder], [poll].[Id]
+      OFFSET @__p_4 ROWS FETCH NEXT @__p_5 ROWS ONLY
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view NewProducts executed in 3020.7301ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.ProductController.NewProducts (Nop.Web) in 3715.9205ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4886.8073ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/Themes/DefaultClean/Content/images/rss.png  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/DefaultClean/Content/images/rss.png'. Physical path: 'C:\Quarter 8 Classes\nop-Commerce\nopCommerce_4.10_Source\Presentation\Nop.Web\Themes\DefaultClean\Content\images\rss.png'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 56.3257ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/search  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (220ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (266ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (229ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (217ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Search", controller = "Catalog", area = ""}. Executing action Nop.Web.Controllers.CatalogController.Search (Nop.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.CatalogController.Search (Nop.Web) with arguments (Nop.Web.Models.Catalog.SearchModel, Nop.Web.Models.Catalog.CatalogPagingFilteringModel) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (324ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 400), @p2='?' (Size = 400), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [GenericAttribute] ([EntityId], [Key], [KeyGroup], [StoreId], [Value])
+      VALUES (@p0, @p1, @p2, @p3, @p4);
+      SELECT [Id]
+      FROM [GenericAttribute]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (262ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [Manufacturer] AS [m]
+      WHERE ([m].[Published] = 1) AND ([m].[Deleted] = 0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (255ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[AllowCustomersToSelectPageSize], [m].[CreatedOnUtc], [m].[Deleted], [m].[Description], [m].[DisplayOrder], [m].[LimitedToStores], [m].[ManufacturerTemplateId], [m].[MetaDescription], [m].[MetaKeywords], [m].[MetaTitle], [m].[Name], [m].[PageSize], [m].[PageSizeOptions], [m].[PictureId], [m].[PriceRanges], [m].[Published], [m].[SubjectToAcl], [m].[UpdatedOnUtc]
+      FROM [Manufacturer] AS [m]
+      WHERE ([m].[Published] = 1) AND ([m].[Deleted] = 0)
+      ORDER BY [m].[DisplayOrder], [m].[Id]
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.CatalogController.Search (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1526.8341ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Search.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (257ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Search executed in 999.3756ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.CatalogController.Search (Nop.Web) in 2929.9111ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4209.9314ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:15536/newproducts  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.1.1-rtm-30846 initialized 'NopObjectContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (221ms) [Parameters=[@__customerGuid_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [c].[Id], [c].[Active], [c].[AdminComment], [c].[AffiliateId], [c].[BillingAddress_Id], [c].[CannotLoginUntilDateUtc], [c].[CreatedOnUtc], [c].[CustomerGuid], [c].[Deleted], [c].[Email], [c].[EmailToRevalidate], [c].[FailedLoginAttempts], [c].[HasShoppingCartItems], [c].[IsSystemAccount], [c].[IsTaxExempt], [c].[LastActivityDateUtc], [c].[LastIpAddress], [c].[LastLoginDateUtc], [c].[RegisteredInStoreId], [c].[RequireReLogin], [c].[ShippingAddress_Id], [c].[SystemName], [c].[Username], [c].[VendorId]
+      FROM [Customer] AS [c]
+      WHERE [c].[CustomerGuid] = @__customerGuid_0
+      ORDER BY [c].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (261ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Customer_Id], [e].[CustomerRole_Id]
+      FROM [Customer_CustomerRole_Mapping] AS [e]
+      WHERE [e].[Customer_Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (246ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Id], [e].[Active], [e].[DefaultTaxDisplayTypeId], [e].[EnablePasswordLifetime], [e].[FreeShipping], [e].[IsSystemRole], [e].[Name], [e].[OverrideTaxDisplayType], [e].[PurchasedWithProductId], [e].[SystemName], [e].[TaxExempt]
+      FROM [CustomerRole] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (277ms) [Parameters=[@__entityId_0='?' (DbType = Int32), @__keyGroup_1='?' (Size = 400)], CommandType='Text', CommandTimeout='30']
+      SELECT [ga].[Id], [ga].[EntityId], [ga].[Key], [ga].[KeyGroup], [ga].[StoreId], [ga].[Value]
+      FROM [GenericAttribute] AS [ga]
+      WHERE ([ga].[EntityId] = @__entityId_0) AND ([ga].[KeyGroup] = @__keyGroup_1)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "NewProducts", controller = "Product", area = ""}. Executing action Nop.Web.Controllers.ProductController.NewProducts (Nop.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Nop.Web.Controllers.ProductController.NewProducts (Nop.Web) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (271ms) [Parameters=[CategoryIds='?', ManufacturerId='?' (DbType = Int32), StoreId='?' (DbType = Int32), VendorId='?' (DbType = Int32), WarehouseId='?' (DbType = Int32), ProductTypeId='?' (DbType = Int32), VisibleIndividuallyOnly='?' (DbType = Boolean), MarkedAsNewOnly='?' (DbType = Boolean), ProductTagId='?' (DbType = Int32), FeaturedProducts='?' (DbType = Boolean), PriceMin='?' (DbType = Decimal), PriceMax='?' (DbType = Decimal), Keywords='?', SearchDescriptions='?' (DbType = Boolean), SearchManufacturerPartNumber='?' (DbType = Boolean), SearchSku='?' (DbType = Boolean), SearchProductTags='?' (DbType = Boolean), UseFullTextSearch='?' (DbType = Boolean), FullTextMode='?' (DbType = Int32), FilteredSpecs='?', LanguageId='?' (DbType = Int32), OrderBy='?' (DbType = Int32), AllowedCustomerRoleIds='?', PageIndex='?' (DbType = Int32), PageSize='?' (DbType = Int32), ShowHidden='?' (DbType = Boolean), OverridePublished='?' (DbType = Boolean), LoadFilterableSpecificationAttributeOptionIds='?' (DbType = Boolean), FilterableSpecificationAttributeOptionIds='?' (Size = 2147483646) (Direction = Output), TotalRecords='?' (Direction = Output) (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      ProductLoadAllPaged @CategoryIds, @ManufacturerId, @StoreId, @VendorId, @WarehouseId, @ProductTypeId, @VisibleIndividuallyOnly, @MarkedAsNewOnly, @ProductTagId, @FeaturedProducts, @PriceMin, @PriceMax, @Keywords, @SearchDescriptions, @SearchManufacturerPartNumber, @SearchSku, @SearchProductTags, @UseFullTextSearch, @FullTextMode, @FilteredSpecs, @LanguageId, @OrderBy, @AllowedCustomerRoleIds, @PageIndex, @PageSize, @ShowHidden, @OverridePublished, @LoadFilterableSpecificationAttributeOptionIds, @FilterableSpecificationAttributeOptionIds output, @TotalRecords output
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method Nop.Web.Controllers.ProductController.NewProducts (Nop.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 281.4377ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view NewProducts.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view NewProducts executed in 68.2085ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Nop.Web.Controllers.ProductController.NewProducts (Nop.Web) in 444.6976ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1626.8235ms 200 text/html; charset=utf-8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
